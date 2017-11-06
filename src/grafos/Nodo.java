@@ -42,5 +42,7 @@ public class Nodo implements Comparable<Nodo>{
     public void setNombre(int nombre) {
         this.nombre = nombre;
     }
+    
+    // boludo
 
 }
