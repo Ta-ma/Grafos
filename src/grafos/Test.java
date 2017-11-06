@@ -13,11 +13,12 @@ public class Test {
 	for (File arch : dir.listFiles()) {
 	    GrafoD grafo = new GrafoD(arch);
 
-	    try {
+	    grafo.coloreoM();
+	    /*try {
 		grafo.prim(4);
 	    } catch (Exception e) {
 
-	    }
+	    }*/
 
 	    // grafo.mostrar();
 	    // grafo.dijkstra(1, 3);
