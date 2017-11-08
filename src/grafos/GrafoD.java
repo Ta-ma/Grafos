@@ -276,7 +276,7 @@ public class GrafoD {
 	    puedoPintar[i] = true;
 	}
 	// asigno el color 0 al primer nodo
-	colores[0] = 0;
+	colores[nodos[0].getNombre()] = 0;
 	
 	// arranco desde el 1 porque el primer nodo ya tiene asignado el 0
 	for (int i = 1; i < tam; i++)
@@ -296,7 +296,7 @@ public class GrafoD {
 	    
 	    // j es el número de color que puedo utilizar, se lo asigno al
 	    // vector de colores
-	    colores[i] = j;
+	    colores[nodos[i].getNombre()] = j;
 	    
 	    // reinicio el vector puedoPintar para la próxima iteración
 	    for (int k = 0; k < tam; k++)
@@ -306,6 +306,6 @@ public class GrafoD {
 	// muestro resultado
 	System.out.println("Colores: ");
 	for (int i = 0; i < tam; i++)
-	    System.out.println("Nodo " + nodos[i].getNombre() + ", Color: " + colores[i]);
+	    System.out.println("Nodo " + nodos[i].getNombre() + ", Color: " + colores[nodos[i].getNombre()]);
     }
 }
