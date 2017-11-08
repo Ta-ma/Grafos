@@ -109,16 +109,21 @@ public class GrafoD {
 	int[] camino = new int[tam];
 	Set<Integer> nodosRestantes = new HashSet<Integer>(tam);
 
+	// inicializo conjunto de nodos restantes
 	for (int i = 0; i < tam; i++)
 	    nodosRestantes.add(i);
 
+	// saco el nodo de partida
 	nodosRestantes.remove(nodoPartida);
 
+	// seteo los costos del vector res en base a
+	// los nodos adyacentes al nodo de partida
 	for (int i = 0; i < tam; i++)
 	    res[i] = matriz[nodoPartida][i];
 
 	while (!nodosRestantes.isEmpty()) {
 	    int nodoMenor = 0, valMenor = NUMERO_GRANDE;
+	    // busco el nodo de menor costo
 	    for (Integer i : nodosRestantes) {
 		if (res[i] < valMenor) {
 		    nodoMenor = i;
@@ -126,6 +131,7 @@ public class GrafoD {
 		}
 	    }
 
+	    // me fijo si hay un camino menos costoso
 	    for (Integer i : nodosRestantes) {
 		if (res[nodoMenor] + matriz[nodoMenor][i] < res[i]) {
 		    res[i] = res[nodoMenor] + matriz[nodoMenor][i];
